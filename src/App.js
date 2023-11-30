@@ -12,8 +12,6 @@ function App() {
       try {
         const res = await axios.get('http://localhost:3000/api/products');
         setFranchiseData([...res.data.products]);
-
-        // 중복을 제거한 업종 목록 생성
         const industries = [...new Set(res.data.products.map(data => data.업종))];
         setUniqueIndustries(industries);
       } catch (error) {
@@ -43,7 +41,6 @@ function App() {
         </select>
       </label>
       <p>선택한 업종에 해당하는 영업표지 개수: {selectedDataCount}</p>
-      {/* 선택한 업종에 해당하는 영업표지 출력 */}
       <div className="franchise-list">
         {franchiseData
           .filter(data => selectedIndustry === '' || data.업종 === selectedIndustry)
