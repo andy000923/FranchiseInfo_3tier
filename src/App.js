@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="app-container">
       <label className="label">
-        하단 바를 통해 프랜차이즈를 차리고 싶은 업종 검색
+        하단 바를 통해 차리고 싶은 프랜차이즈의 업종 검색
         <select
           className="select"
           value={selectedIndustry}
